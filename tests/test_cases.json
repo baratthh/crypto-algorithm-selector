@@ -1,0 +1,115 @@
+[
+  {
+    "case_name": "High-Security Database Encryption",
+    "requirements": {
+      "dataType": "binary",
+      "securityPriority": 10,
+      "performancePriority": 4,
+      "useCase": "data-at-rest",
+      "compliance": ["FIPS-140-2"],
+      "quantumConcern": false
+    },
+    "expected_top": "AES",
+    "min_score_for_aes": 80
+  },
+  {
+    "case_name": "Fast IoT Streaming",
+    "requirements": {
+      "dataType": "streaming",
+      "securityPriority": 7,
+      "performancePriority": 10,
+      "useCase": "iot",
+      "compliance": [],
+      "quantumConcern": false
+    },
+    "expected_top": "ChaCha20",
+    "min_score_for_chacha20": 85
+  },
+  {
+    "case_name": "Legacy Financial System with PCI Compliance",
+    "requirements": {
+      "dataType": "text",
+      "securityPriority": 8,
+      "performancePriority": 5,
+      "useCase": "financial",
+      "compliance": ["PCI-DSS"],
+      "quantumConcern": false
+    },
+    "should_be_zero": "3DES"
+  },
+  {
+    "case_name": "Key Exchange with Quantum Concern",
+    "requirements": {
+      "dataType": "keys",
+      "securityPriority": 9,
+      "performancePriority": 6,
+      "useCase": "key-exchange",
+      "compliance": [],
+      "quantumConcern": true
+    },
+    "score_should_be_halved": "RSA"
+  },
+  {
+    "case_name": "General Purpose High Security & Performance",
+    "requirements": {
+      "dataType": "binary",
+      "securityPriority": 9,
+      "performancePriority": 9,
+      "useCase": "general-purpose",
+      "compliance": ["FIPS-140-2"],
+      "quantumConcern": false
+    },
+    "expected_top": "AES",
+    "min_score_for_aes": 90
+  },
+  {
+    "case_name": "Mobile Key Exchange, GDPR Compliant",
+    "requirements": {
+      "dataType": "keys",
+      "securityPriority": 9,
+      "performancePriority": 7,
+      "useCase": "mobile",
+      "compliance": ["GDPR"],
+      "quantumConcern": false
+    },
+    "expected_top": "ChaCha20",
+    "min_score_for_chacha20": 80
+  },
+  {
+    "case_name": "Streaming Data, Low Security, High Performance",
+    "requirements": {
+      "dataType": "streaming",
+      "securityPriority": 3,
+      "performancePriority": 10,
+      "useCase": "video-streaming",
+      "compliance": [],
+      "quantumConcern": false
+    },
+    "expected_top": "ChaCha20",
+    "min_score_for_chacha20": 75
+  },
+  {
+    "case_name": "Legacy System needing PCI - Expect No Good Match",
+    "requirements": {
+      "dataType": "text",
+      "securityPriority": 7,
+      "performancePriority": 4,
+      "useCase": "legacy-systems",
+      "compliance": ["PCI-DSS"],
+      "quantumConcern": false
+    },
+    "should_be_zero": "3DES"
+  },
+  {
+    "case_name": "High Security Data at Rest with Quantum Concern",
+    "requirements": {
+      "dataType": "binary",
+      "securityPriority": 10,
+      "performancePriority": 5,
+      "useCase": "data-at-rest",
+      "compliance": ["FIPS-140-2"],
+      "quantumConcern": true
+    },
+    "score_should_be_halved": "AES"
+  }
+]
