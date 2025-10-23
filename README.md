@@ -1,6 +1,6 @@
 # Cryptographic Algorithm Selector Expert System
 
-<!--[![GitHub Pages Deploy](https://github.com/baratthh/crypto-algorithm-selector/actions/workflows/deploy.yml/badge.svg)](https://github.com/baratthh/crypto-algorithm-selector/actions/workflows/deploy.yml)-->
+[![GitHub Pages Deploy](https://github.com/baratthh/crypto-algorithm-selector/actions/workflows/deploy.yml/badge.svg)](https://github.com/baratthh/crypto-algorithm-selector/actions/workflows/deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 An intelligent, static web-based expert system that helps users make informed decisions about cryptographic algorithms based on their specific requirements, constraints, and compliance needs.
@@ -119,3 +119,4 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
