@@ -11,6 +11,7 @@ def main():
     print("Starting static site build...")
 
     # Define paths
+    script_location = Path(__file__).resolve()
     project_root = Path(__file__).parent
     knowledge_base_dir = project_root / "knowledge_base"
     template_dir = project_root / "templates"
@@ -76,4 +77,5 @@ def main():
     print("Example: python -m http.server --directory dist")
 
 if __name__ == "__main__":
+
     main()
