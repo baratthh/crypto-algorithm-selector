@@ -32,7 +32,7 @@ Choosing the right cryptographic algorithm involves balancing multiple factors: 
 ### Setup
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/baratthh/crypto-algorithm-selector.git](https://github.com/baratthh/crypto-algorithm-selector.git)
+    git clone https://github.com/baratthh/crypto-algorithm-selector.git
     cd crypto-algorithm-selector
     ```
 
@@ -119,4 +119,5 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
 
