@@ -1,0 +1,30 @@
+{
+  "HIPAA": {
+    "name": "Health Insurance Portability and Accountability Act",
+    "description": "US healthcare data protection requiring encryption of PHI",
+    "requiredSecurity": 7,
+    "recommendedAlgorithms": ["AES", "RSA", "ECC"],
+    "prohibitedAlgorithms": ["DES", "RC4", "TEA"]
+  },
+  "PCI-DSS": {
+    "name": "Payment Card Industry Data Security Standard",
+    "description": "Standard for organizations handling credit card information",
+    "requiredSecurity": 8,
+    "recommendedAlgorithms": ["AES", "RSA", "ECC"],
+    "prohibitedAlgorithms": ["DES", "3DES", "RC4"]
+  },
+  "GDPR": {
+    "name": "General Data Protection Regulation",
+    "description": "EU regulation requiring strong encryption for personal data",
+    "requiredSecurity": 7,
+    "recommendedAlgorithms": ["AES", "ChaCha20", "ECC"],
+    "prohibitedAlgorithms": ["DES", "RC4"]
+  },
+  "FIPS-140-2": {
+    "name": "Federal Information Processing Standard",
+    "description": "US government standard for cryptographic modules",
+    "requiredSecurity": 8,
+    "recommendedAlgorithms": ["AES", "RSA", "ECC", "DSA"],
+    "prohibitedAlgorithms": ["DES", "RC4", "Blowfish"]
+  }
+}

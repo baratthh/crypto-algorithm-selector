@@ -1,0 +1,44 @@
+{
+  "api-security": {
+    "title": "Securing REST API Communications",
+    "description": "Protecting data transmitted between client and server",
+    "recommendedApproach": "Use TLS 1.3 with ECDHE for key exchange and AES-GCM or ChaCha20-Poly1305 for encryption",
+    "requirements": { "security": 8, "performance": 7, "type": "hybrid" }
+  },
+  "database-encryption": {
+    "title": "Database Encryption at Rest",
+    "description": "Encrypting sensitive data stored in databases",
+    "recommendedApproach": "Use AES-256 for column-level encryption with secure key management",
+    "requirements": { "security": 9, "performance": 6, "type": "symmetric" }
+  },
+  "file-encryption": {
+    "title": "File and Document Encryption",
+    "description": "Protecting files on disk or in cloud storage",
+    "recommendedApproach": "Use AES-256-GCM with authenticated encryption",
+    "requirements": { "security": 8, "performance": 7, "type": "symmetric" }
+  },
+  "iot-devices": {
+    "title": "IoT Device Communication",
+    "description": "Securing resource-constrained embedded devices",
+    "recommendedApproach": "Use ChaCha20-Poly1305 for efficiency and ECC for key exchange",
+    "requirements": { "security": 7, "performance": 9, "type": "hybrid" }
+  },
+  "mobile-apps": {
+    "title": "Mobile Application Data Protection",
+    "description": "Encrypting sensitive data in mobile applications",
+    "recommendedApproach": "Use platform keystore with AES-GCM or ChaCha20",
+    "requirements": { "security": 8, "performance": 8, "type": "symmetric" }
+  },
+  "email-encryption": {
+    "title": "Email Encryption",
+    "description": "End-to-end encryption for email communications",
+    "recommendedApproach": "Use RSA or ECC for key exchange with AES for message encryption",
+    "requirements": { "security": 9, "performance": 5, "type": "hybrid" }
+  },
+  "video-streaming": {
+    "title": "Video Streaming Protection",
+    "description": "Encrypting video content during transmission",
+    "recommendedApproach": "Use AES-CTR or ChaCha20 for low-latency streaming",
+    "requirements": { "security": 7, "performance": 10, "type": "symmetric" }
+  }
+}
