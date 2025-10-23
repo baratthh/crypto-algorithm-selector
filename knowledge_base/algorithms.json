@@ -1,0 +1,1234 @@
+{
+    "AES": {
+        "name": "Advanced Encryption Standard",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "video",
+            "audio",
+            "binary"
+        ],
+        "securityLevel": 9,
+        "performanceScore": 9,
+        "useCases": [
+            "general-purpose",
+            "data-at-rest",
+            "streaming",
+            "file-encryption",
+            "database-encryption"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 2001,
+        "description": "AES is the gold standard for symmetric encryption, adopted by the US government and widely used globally. It operates on fixed block sizes and supports three key lengths.",
+        "strengths": [
+            "Highly secure with no practical vulnerabilities",
+            "Extremely fast with hardware acceleration (AES-NI)",
+            "Well-studied and trusted",
+            "Wide implementation support"
+        ],
+        "weaknesses": [
+            "Requires secure key distribution",
+            "Block cipher modes need careful selection",
+            "Vulnerable to quantum computing (using Grover's algorithm)"
+        ],
+        "complexity": "O(n) time complexity",
+        "quantumResistant": false,
+        "compliance": [
+            "FIPS 140-2",
+            "HIPAA",
+            "GDPR",
+            "PCI-DSS"
+        ],
+        "realWorldUse": "Used in: TLS/SSL (HTTPS), Wi-Fi (WPA2/WPA3), full-disk encryption (BitLocker, FileVault), WhatsApp & Signal messages, 7-Zip archives.",
+        "implementation": "Available in virtually all crypto libraries: OpenSSL, cryptography.io (Python), Web Crypto API, Java Crypto, .NET."
+    },
+    "ChaCha20": {
+        "name": "ChaCha20",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "video",
+            "audio",
+            "streaming",
+            "binary"
+        ],
+        "securityLevel": 9,
+        "performanceScore": 10,
+        "useCases": [
+            "streaming",
+            "mobile",
+            "iot",
+            "api-security",
+            "video-streaming"
+        ],
+        "keyLengths": [
+            256
+        ],
+        "blockSize": null,
+        "yearIntroduced": 2008,
+        "description": "ChaCha20 is a modern stream cipher designed for excellent performance on devices without hardware AES acceleration (like mobile phones and IoT). Often combined with Poly1305 for authentication.",
+        "strengths": [
+            "Superior performance on mobile and IoT devices",
+            "Constant-time operation (immune to timing attacks)",
+            "No hardware acceleration needed",
+            "Simpler implementation than AES"
+        ],
+        "weaknesses": [
+            "Less studied than AES",
+            "Not FIPS certified (though widely adopted in IETF standards)"
+        ],
+        "complexity": "O(n) minimal overhead",
+        "quantumResistant": false,
+        "compliance": [
+            "TLS 1.3",
+            "IETF RFC 8439"
+        ],
+        "realWorldUse": "Used in: TLS 1.3 (as an alternative to AES-GCM), Android full-disk encryption, Google Chrome, Cloudflare, WireGuard VPN.",
+        "implementation": "Available in libsodium, OpenSSL 1.1+, Go crypto, Rust crypto, Web Crypto API (in some browsers)."
+    },
+    "RSA": {
+        "name": "Rivest-Shamir-Adleman",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text",
+            "keys"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 3,
+        "useCases": [
+            "key-exchange",
+            "digital-signatures",
+            "authentication",
+            "email-encryption"
+        ],
+        "keyLengths": [
+            2048,
+            3072,
+            4096
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1977,
+        "description": "RSA is one of the first public-key cryptosystems, widely used for secure data transmission using public and private key pairs. Used for encryption (of keys) and digital signatures.",
+        "strengths": [
+            "Well-established and understood",
+            "Enables secure communication without prior key exchange",
+            "Supports both encryption and signatures",
+            "Widely supported"
+        ],
+        "weaknesses": [
+            "Very slow compared to symmetric encryption",
+            "Large key sizes required (2048-bit minimum)",
+            "Vulnerable to quantum computers (using Shor's algorithm)",
+            "Not for bulk data encryption"
+        ],
+        "complexity": "O(n³) for key generation, O(n²) for encryption/decryption",
+        "quantumResistant": false,
+        "compliance": [
+            "FIPS 186-4",
+            "PCI-DSS",
+            "GDPR"
+        ],
+        "realWorldUse": "Used in: SSL/TLS certificates (key exchange), SSH, PGP/GPG, code signing, JSON Web Tokens (JWT).",
+        "implementation": "Available in OpenSSL, cryptography.io (Python), Web Crypto API, Java, .NET."
+    },
+    "ECC": {
+        "name": "Elliptic Curve Cryptography",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text",
+            "keys"
+        ],
+        "securityLevel": 9,
+        "performanceScore": 6,
+        "useCases": [
+            "key-exchange",
+            "digital-signatures",
+            "mobile",
+            "iot",
+            "api-security",
+            "email-encryption"
+        ],
+        "keyLengths": [
+            256,
+            384,
+            521
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1985,
+        "description": "ECC provides equivalent security to RSA with much smaller key sizes, making it ideal for resource-constrained environments like mobile and IoT devices. It's the modern standard for public-key crypto.",
+        "strengths": [
+            "Smaller keys than RSA for same security (e.g., 256-bit ECC ≈ 3072-bit RSA)",
+            "Faster than RSA",
+            "Lower power consumption",
+            "Efficient for mobile/IoT"
+        ],
+        "weaknesses": [
+            "More complex mathematics than RSA",
+            "Some curves have been compromised or are suspect (e.g., NIST P-256)",
+            "Vulnerable to quantum computers"
+        ],
+        "complexity": "O(n²) with smaller n than RSA",
+        "quantumResistant": false,
+        "compliance": [
+            "FIPS 186-4",
+            "NSA Suite B"
+        ],
+        "realWorldUse": "Used in: TLS 1.2/1.3 (key exchange - ECDHE), Bitcoin & Ethereum, Apple iMessage, Signal Protocol.",
+        "implementation": "Available in OpenSSL, cryptography.io (Python), Web Crypto API, Java, .NET."
+    },
+    "Twofish": {
+        "name": "Twofish",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "video",
+            "binary",
+            "file-encryption"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 7,
+        "useCases": [
+            "general-purpose",
+            "data-at-rest",
+            "file-encryption"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "Twofish was an AES finalist offering strong security with flexible key sizes. It is known for its complex key schedule, which makes it fast for encryption but slower to set up.",
+        "strengths": [
+            "Strong security with no known vulnerabilities",
+            "Flexible key length",
+            "Good performance (once key is set up)",
+            "Public domain"
+        ],
+        "weaknesses": [
+            "Slower than AES with hardware acceleration",
+            "Less widely implemented than AES",
+            "Slower key setup"
+        ],
+        "complexity": "O(n) with moderate key schedule",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: VeraCrypt (disk encryption), PGP, and various other encryption tools as an alternative to AES.",
+        "implementation": "Available in cryptography.io (Python), Bouncy Castle (Java), libgcrypt."
+    },
+    "Serpent": {
+        "name": "Serpent",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "video",
+            "binary",
+            "file-encryption"
+        ],
+        "securityLevel": 10,
+        "performanceScore": 5,
+        "useCases": [
+            "high-security",
+            "data-at-rest",
+            "file-encryption"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "Serpent was an AES finalist known for its conservative design and high security margin. It prioritizes security over performance, using 32 rounds (double AES-256's 14).",
+        "strengths": [
+            "Extremely high security margin",
+            "Very conservative design (built to be over-engineered for safety)",
+            "No known weaknesses",
+            "Simple structure"
+        ],
+        "weaknesses": [
+            "Slower than AES",
+            "Less hardware optimization",
+            "Not widely adopted"
+        ],
+        "complexity": "O(n) with high constant factor",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: VeraCrypt (disk encryption), often offered as a high-security alternative to AES in encryption software.",
+        "implementation": "Available in cryptography.io (Python), Bouncy Castle (Java)."
+    },
+    "Blowfish": {
+        "name": "Blowfish",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "binary"
+        ],
+        "securityLevel": 6,
+        "performanceScore": 8,
+        "useCases": [
+            "general-purpose",
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            32,
+            64,
+            128,
+            256,
+            448
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1993,
+        "description": "Blowfish is a fast block cipher with a variable key length. Its 64-bit block size makes it a legacy algorithm, and it has been superseded by Twofish and AES.",
+        "strengths": [
+            "Very fast encryption",
+            "Flexible key length",
+            "No known effective attacks",
+            "Public domain"
+        ],
+        "weaknesses": [
+            "64-bit block size (vulnerable to 'birthday attacks' on large datasets)",
+            "Not recommended for new systems",
+            "Slow key setup"
+        ],
+        "complexity": "O(n) with slow key schedule",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: bcrypt (password hashing), some password managers, legacy VPNs, and embedded systems.",
+        "implementation": "Available in OpenSSL, Bouncy Castle (Java), cryptography.io (Python)."
+    },
+    "DES": {
+        "name": "Data Encryption Standard",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 2,
+        "performanceScore": 4,
+        "useCases": [
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            56
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1977,
+        "description": "DES was the first widely adopted encryption standard but is now completely insecure due to its small 56-bit key size. It should never be used for new applications.",
+        "strengths": [
+            "Simple to understand",
+            "Historical significance"
+        ],
+        "weaknesses": [
+            "Completely broken by modern computers (can be brute-forced in hours)",
+            "56-bit key far too small",
+            "Vulnerable to brute force"
+        ],
+        "complexity": "O(n) but insecure",
+        "quantumResistant": false,
+        "compliance": [
+            "WITHDRAWN"
+        ],
+        "realWorldUse": "Deprecated. Exists only in legacy systems that must be upgraded.",
+        "implementation": "Available in most crypto libraries for backward compatibility, but use is forbidden in new systems."
+    },
+    "3DES": {
+        "name": "Triple Data Encryption Standard",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 5,
+        "performanceScore": 2,
+        "useCases": [
+            "legacy-systems",
+            "financial"
+        ],
+        "keyLengths": [
+            112,
+            168
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1978,
+        "description": "3DES applies DES three times to each block. It is much more secure than DES but is extremely slow and has been officially deprecated by NIST in favor of AES.",
+        "strengths": [
+            "More secure than single DES",
+            "Widely supported in legacy financial systems"
+        ],
+        "weaknesses": [
+            "Very slow performance",
+            "Officially deprecated by NIST (as of 2023)",
+            "64-bit block size (vulnerable to birthday attacks)"
+        ],
+        "complexity": "O(3n) three times slower than DES",
+        "quantumResistant": false,
+        "compliance": [
+            "PCI-DSS (for legacy)",
+            "Deprecated by NIST"
+        ],
+        "realWorldUse": "Legacy use in: EMV payment cards (chip cards) and some older financial transaction systems.",
+        "implementation": "Available in OpenSSL, cryptography.io (Python), Java, .NET, but use is discouraged."
+    },
+    "RC2": {
+        "name": "Rivest Cipher 2",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 4,
+        "performanceScore": 6,
+        "useCases": [
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            8,
+            16,
+            32,
+            64,
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1987,
+        "description": "RC2 is a variable key size block cipher designed as a 'drop-in' replacement for DES. It is now considered weak and outdated.",
+        "strengths": [
+            "Variable key size",
+            "Simple implementation"
+        ],
+        "weaknesses": [
+            "Related-key attacks discovered",
+            "64-bit block size",
+            "Better alternatives available"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Deprecated. Was used in older versions of SSL and S/MIME.",
+        "implementation": "Available in older libraries like OpenSSL, but not recommended for use."
+    },
+    "RC4": {
+        "name": "Rivest Cipher 4",
+        "type": "symmetric",
+        "dataTypes": [
+            "streaming"
+        ],
+        "securityLevel": 1,
+        "performanceScore": 10,
+        "useCases": [
+            "none"
+        ],
+        "keyLengths": [
+            40,
+            128,
+            256
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1987,
+        "description": "RC4 is a stream cipher that was once popular but is now completely broken with multiple vulnerabilities. It MUST NOT be used.",
+        "strengths": [
+            "Historically very fast",
+            "Simple implementation"
+        ],
+        "weaknesses": [
+            "Completely broken",
+            "Forbidden in TLS 1.3",
+            "Multiple keystream biases",
+            "Should never be used"
+        ],
+        "complexity": "O(n) but insecure",
+        "quantumResistant": false,
+        "compliance": [
+            "FORBIDDEN"
+        ],
+        "realWorldUse": "Deprecated. Was used in WEP (also broken) and older versions of SSL/TLS.",
+        "implementation": "Available in many libraries for historical reasons, but its use is forbidden by all modern standards."
+    },
+    "RC5": {
+        "name": "Rivest Cipher 5",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 6,
+        "performanceScore": 8,
+        "useCases": [
+            "general-purpose"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1994,
+        "description": "RC5 is a parameterized block cipher (variable block size, key size, and rounds). Its 64-bit block size makes it less than ideal today.",
+        "strengths": [
+            "Simple design",
+            "Variable parameters",
+            "Fast performance"
+        ],
+        "weaknesses": [
+            "Patent restrictions until 2015",
+            "64-bit block size",
+            "Less studied than alternatives"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Limited adoption due to patents. Not commonly used in major protocols.",
+        "implementation": "Available in some crypto libraries (e.g., Bouncy Castle)."
+    },
+    "RC6": {
+        "name": "Rivest Cipher 6",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary",
+            "image"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 8,
+        "useCases": [
+            "general-purpose"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "RC6 was an AES finalist based on RC5. It uses a 128-bit block size and was designed for better security and performance.",
+        "strengths": [
+            "Good performance",
+            "Strong security properties",
+            "128-bit block size"
+        ],
+        "weaknesses": [
+            "Not selected as AES",
+            "Patent restrictions",
+            "Less widely adopted"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Limited adoption. Was submitted to the AES competition but did not win.",
+        "implementation": "Available in PyCryptodome (Python), Bouncy Castle (Java)."
+    },
+    "Diffie-Hellman": {
+        "name": "Diffie-Hellman Key Exchange",
+        "type": "asymmetric",
+        "dataTypes": [
+            "keys"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 4,
+        "useCases": [
+            "key-exchange"
+        ],
+        "keyLengths": [
+            2048,
+            3072,
+            4096
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1976,
+        "description": "Diffie-Hellman (DH) is a method for two parties to establish a shared secret over an insecure channel. It is a key exchange protocol, *not* an encryption algorithm.",
+        "strengths": [
+            "Secure key exchange",
+            "Foundation of modern cryptography",
+            "Widely used protocol"
+        ],
+        "weaknesses": [
+            "Vulnerable to man-in-the-middle (MITM) attacks without authentication",
+            "Computationally expensive",
+            "Vulnerable to quantum computers"
+        ],
+        "complexity": "O(n²) exponential operations",
+        "quantumResistant": false,
+        "compliance": [
+            "IETF RFCs",
+            "FIPS 186-4"
+        ],
+        "realWorldUse": "Used in: TLS/SSL, SSH, VPNs (IPsec), and many other protocols to agree on a symmetric key for bulk encryption.",
+        "implementation": "Available in OpenSSL, cryptography.io (Python), Java, .NET."
+    },
+    "DSA": {
+        "name": "Digital Signature Algorithm",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text",
+            "keys"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 5,
+        "useCases": [
+            "digital-signatures",
+            "authentication"
+        ],
+        "keyLengths": [
+            1024,
+            2048,
+            3072
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1991,
+        "description": "DSA is a Federal Information Processing Standard (FIPS) for digital signatures only. It provides authentication and integrity but cannot be used for encryption.",
+        "strengths": [
+            "Standard for digital signatures",
+            "Efficient signature verification",
+            "Government approved"
+        ],
+        "weaknesses": [
+            "Only for signatures, not encryption",
+            "Requires a good random number generator (critical)",
+            "Being phased out in favor of ECDSA (ECC-based) and EdDSA"
+        ],
+        "complexity": "O(n²)",
+        "quantumResistant": false,
+        "compliance": [
+            "FIPS 186-4"
+        ],
+        "realWorldUse": "Used in: GNU Privacy Guard (GPG), code signing, and government systems for message authentication.",
+        "implementation": "Available in OpenSSL, cryptography.io (Python), Java, .NET."
+    },
+    "ElGamal": {
+        "name": "ElGamal Encryption",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text",
+            "keys"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 4,
+        "useCases": [
+            "key-exchange",
+            "digital-signatures"
+        ],
+        "keyLengths": [
+            2048,
+            3072,
+            4096
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1985,
+        "description": "ElGamal is a public-key cryptosystem based on the Diffie-Hellman key exchange. It can be used for both encryption and digital signatures.",
+        "strengths": [
+            "Semantic security (probabilistic encryption)",
+            "Can be used for encryption and signatures",
+            "Based on discrete log problem"
+        ],
+        "weaknesses": [
+            "Message expansion (ciphertext is twice the size of plaintext)",
+            "Slower than RSA",
+            "Less widely implemented"
+        ],
+        "complexity": "O(n²)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: GNU Privacy Guard (GPG) as an alternative to RSA, and in some e-voting systems.",
+        "implementation": "Available in PyCryptodome (Python), Bouncy Castle (Java), libgcrypt."
+    },
+    "Rabin": {
+        "name": "Rabin Cryptosystem",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 3,
+        "useCases": [
+            "encryption",
+            "academic"
+        ],
+        "keyLengths": [
+            2048,
+            3072,
+            4096
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1979,
+        "description": "Rabin cryptosystem is provably as difficult to break as factoring. It is similar to RSA but with a unique decryption process.",
+        "strengths": [
+            "Provable security (as hard as factoring)",
+            "Fast encryption (faster than RSA)"
+        ],
+        "weaknesses": [
+            "Decryption produces four possible plaintexts, requiring an extra step to identify the correct one",
+            "Less practical than RSA",
+            "Rarely used"
+        ],
+        "complexity": "O(n²)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Primarily of academic interest. Not used in any major commercial protocols.",
+        "implementation": "Available in specialized or academic libraries."
+    },
+    "CAST-128": {
+        "name": "CAST-128",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 7,
+        "useCases": [
+            "general-purpose",
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            40,
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1996,
+        "description": "CAST-128 is a symmetric block cipher used in various encryption products, notably older versions of PGP. Its 64-bit block size makes it a legacy algorithm.",
+        "strengths": [
+            "Good security record for its time",
+            "Efficient implementation",
+            "Used in PGP"
+        ],
+        "weaknesses": [
+            "64-bit block size",
+            "Variable rounds based on key size",
+            "Less common than AES"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [
+            "RFC 2144"
+        ],
+        "realWorldUse": "Used in: Older versions of GNU Privacy Guard (GPG) and PGP.",
+        "implementation": "Available in OpenSSL, PyCryptodome (Python), Bouncy Castle (Java)."
+    },
+    "CAST-256": {
+        "name": "CAST-256",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary",
+            "image"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 7,
+        "useCases": [
+            "general-purpose"
+        ],
+        "keyLengths": [
+            128,
+            160,
+            192,
+            224,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "CAST-256 was an AES finalist, an extension of CAST-128 with a 128-bit block size and variable key length.",
+        "strengths": [
+            "Flexible key size",
+            "128-bit blocks",
+            "Good security properties"
+        ],
+        "weaknesses": [
+            "Not selected as AES",
+            "Less adoption",
+            "More complex than CAST-128"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [
+            "RFC 2612"
+        ],
+        "realWorldUse": "Used in: Some GPG implementations as an alternative to AES.",
+        "implementation": "Available in specialized libraries like Bouncy Castle (Java)."
+    },
+    "SEED": {
+        "name": "SEED",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 6,
+        "useCases": [
+            "general-purpose",
+            "asia-specific"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "SEED is a South Korean national standard block cipher. It is a 128-bit block cipher with a 128-bit key.",
+        "strengths": [
+            "National standard in South Korea",
+            "Good security properties",
+            "Efficient implementation"
+        ],
+        "weaknesses": [
+            "Fixed 128-bit key only",
+            "Limited global adoption",
+            "Less studied outside Korea"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [
+            "Korean KCMVP"
+        ],
+        "realWorldUse": "Widely used in: South Korean government and commercial applications, including banking and e-commerce.",
+        "implementation": "Available in OpenSSL, Bouncy Castle (Java), and various Korean crypto libraries."
+    },
+    "ARIA": {
+        "name": "ARIA",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "binary"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 7,
+        "useCases": [
+            "general-purpose",
+            "asia-specific"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 2003,
+        "description": "ARIA is a South Korean national standard block cipher, similar to AES in structure. It is widely used in Korean systems.",
+        "strengths": [
+            "Similar security to AES",
+            "Korean national standard",
+            "Well-analyzed structure"
+        ],
+        "weaknesses": [
+            "Less global adoption",
+            "Fewer implementations",
+            "Not hardware accelerated globally"
+        ],
+        "complexity": "O(n) similar to AES",
+        "quantumResistant": false,
+        "compliance": [
+            "Korean KCMVP"
+        ],
+        "realWorldUse": "Used in: South Korean government systems, banking, and e-commerce. Included in TLS as an optional cipher.",
+        "implementation": "Available in OpenSSL 1.1+, Bouncy Castle (Java)."
+    },
+    "Camellia": {
+        "name": "Camellia",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "image",
+            "video",
+            "binary"
+        ],
+        "securityLevel": 9,
+        "performanceScore": 8,
+        "useCases": [
+            "general-purpose",
+            "asia-specific",
+            "file-encryption"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 2000,
+        "description": "Camellia is a Japanese block cipher offering security and performance comparable to AES. It is an approved international standard.",
+        "strengths": [
+            "Security comparable to AES",
+            "Efficient on software and hardware",
+            "ISO/IEC standard",
+            "Good alternative to AES"
+        ],
+        "weaknesses": [
+            "Less Western adoption",
+            "Fewer implementations than AES"
+        ],
+        "complexity": "O(n) comparable to AES",
+        "quantumResistant": false,
+        "compliance": [
+            "ISO/IEC 18033-3",
+            "NESSIE"
+        ],
+        "realWorldUse": "Used in: Japanese government systems, VeraCrypt, Mozilla Firefox (for TLS), and GPG.",
+        "implementation": "Available in OpenSSL, GnuTLS, Bouncy Castle (Java), cryptography.io (Python)."
+    },
+    "KASUMI": {
+        "name": "KASUMI",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 6,
+        "performanceScore": 7,
+        "useCases": [
+            "mobile",
+            "telecommunications"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1999,
+        "description": "KASUMI is a block cipher used in 3G mobile telephony (UMTS) for encryption and integrity protection. Based on the MISTY1 cipher.",
+        "strengths": [
+            "Optimized for mobile hardware",
+            "Used in 3G/4G networks",
+            "Low resource requirements"
+        ],
+        "weaknesses": [
+            "64-bit block size",
+            "Related-key attacks found (though not practical in 3G context)",
+            "Being replaced in 5G"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [
+            "3GPP"
+        ],
+        "realWorldUse": "Used in: 3G and 4G (LTE) mobile networks for securing voice and data traffic.",
+        "implementation": "Available in telecommunications-specific libraries."
+    },
+    "Skipjack": {
+        "name": "Skipjack",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 5,
+        "performanceScore": 6,
+        "useCases": [
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            80
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1993,
+        "description": "Skipjack was developed by the NSA and was classified until 1998. It was intended for use in the 'Clipper chip', which included a key escrow mechanism.",
+        "strengths": [
+            "Fast performance",
+            "Designed by NSA"
+        ],
+        "weaknesses": [
+            "80-bit key is considered weak today",
+            "Proprietary history and association with key escrow",
+            "64-bit block size"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Deprecated. Was used in the Clipper chip and Fortezza-enabled devices. No modern use.",
+        "implementation": "Available in some libraries for historical/academic purposes."
+    },
+    "3-Way": {
+        "name": "3-Way",
+        "type": "symmetric",
+        "dataTypes": [
+            "text"
+        ],
+        "securityLevel": 5,
+        "performanceScore": 6,
+        "useCases": [
+            "academic"
+        ],
+        "keyLengths": [
+            96
+        ],
+        "blockSize": 96,
+        "yearIntroduced": 1994,
+        "description": "3-Way is a block cipher notable for its unusual 96-bit block and key size. It is primarily of academic interest.",
+        "strengths": [
+            "Symmetric encryption/decryption",
+            "Simple design"
+        ],
+        "weaknesses": [
+            "Unusual 96-bit block size",
+            "Limited adoption",
+            "Academic interest only"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "None. Primarily academic.",
+        "implementation": "Available in academic libraries."
+    },
+    "IDEA": {
+        "name": "International Data Encryption Algorithm",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 7,
+        "performanceScore": 6,
+        "useCases": [
+            "general-purpose",
+            "legacy-systems"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1991,
+        "description": "IDEA is a symmetric block cipher that was widely used in PGP. It was patented, which limited its adoption.",
+        "strengths": [
+            "Strong security properties for its time",
+            "Used in early PGP versions",
+            "No significant practical attacks"
+        ],
+        "weaknesses": [
+            "Patent restrictions (now expired)",
+            "64-bit block size",
+            "Largely replaced by AES"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: Early versions of PGP (Pretty Good Privacy).",
+        "implementation": "Available in OpenSSL, PyCryptodome (Python), Bouncy Castle (Java)."
+    },
+    "TEA": {
+        "name": "Tiny Encryption Algorithm",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 4,
+        "performanceScore": 9,
+        "useCases": [
+            "embedded",
+            "legacy-systems",
+            "academic"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1994,
+        "description": "TEA is a simple cipher designed for easy implementation in software with minimal code. It is not considered secure for general use.",
+        "strengths": [
+            "Extremely simple (few lines of code)",
+            "Very fast",
+            "Small code size"
+        ],
+        "weaknesses": [
+            "Weak key schedule",
+            "Related-key attacks",
+            "Superseded by XTEA",
+            "64-bit block size"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: Some video games for data obfuscation, hobbyist projects. Not for secure applications.",
+        "implementation": "Simple to implement manually. Available but XTEA is preferred."
+    },
+    "XTEA": {
+        "name": "Extended Tiny Encryption Algorithm",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 6,
+        "performanceScore": 9,
+        "useCases": [
+            "embedded",
+            "iot"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1997,
+        "description": "XTEA is a revised version of TEA that fixed its key schedule weaknesses. It remains a simple, fast cipher for resource-constrained environments.",
+        "strengths": [
+            "Simple implementation",
+            "Very fast",
+            "Better than TEA",
+            "Small footprint"
+        ],
+        "weaknesses": [
+            "64-bit block size",
+            "Not as studied as AES",
+            "Limited standardization"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Used in: Embedded systems, IoT devices, or other situations where code size and speed are critical and AES is not available.",
+        "implementation": "Available in various embedded crypto libraries."
+    },
+    "Shark": {
+        "name": "Shark",
+        "type": "symmetric",
+        "dataTypes": [
+            "text"
+        ],
+        "securityLevel": 6,
+        "performanceScore": 6,
+        "useCases": [
+            "academic"
+        ],
+        "keyLengths": [
+            128
+        ],
+        "blockSize": 64,
+        "yearIntroduced": 1996,
+        "description": "Shark is a block cipher that was an early example of a substitution-permutation network (SPN), which influenced the design of Rijndael (AES).",
+        "strengths": [
+            "Influenced AES design",
+            "Interesting cryptographic properties"
+        ],
+        "weaknesses": [
+            "Practical attacks demonstrated",
+            "Never widely adopted",
+            "Academic interest only",
+            "64-bit block size"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "None. Primarily academic.",
+        "implementation": "Available in academic implementations."
+    },
+    "MARS": {
+        "name": "MARS",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "binary"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 6,
+        "useCases": [
+            "general-purpose"
+        ],
+        "keyLengths": [
+            128,
+            192,
+            256
+        ],
+        "blockSize": 128,
+        "yearIntroduced": 1998,
+        "description": "MARS was an AES finalist designed by IBM. It has a complex, layered design intended to provide a high security margin.",
+        "strengths": [
+            "High security margin",
+            "Good performance",
+            "Flexible design"
+        ],
+        "weaknesses": [
+            "Complex design (hard to implement/analyze)",
+            "Not selected as AES",
+            "Less adoption"
+        ],
+        "complexity": "O(n)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Limited adoption. IBM holds patents but has made it available royalty-free.",
+        "implementation": "Available in specialized libraries like Bouncy Castle (Java)."
+    },
+    "Cramer-Shoup": {
+        "name": "Cramer-Shoup Cryptosystem",
+        "type": "asymmetric",
+        "dataTypes": [
+            "text",
+            "keys"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 3,
+        "useCases": [
+            "high-security",
+            "academic"
+        ],
+        "keyLengths": [
+            2048,
+            3072,
+            4096
+        ],
+        "blockSize": null,
+        "yearIntroduced": 1998,
+        "description": "Cramer-Shoup is the first practical public-key cryptosystem provably secure against adaptive chosen ciphertext attack (CCA2-secure) in the standard model.",
+        "strengths": [
+            "Provable security (CCA2)",
+            "Resistant to chosen ciphertext attacks",
+            "Strong theoretical foundation"
+        ],
+        "weaknesses": [
+            "Slower than other systems",
+            "Larger ciphertext (about twice RSA)",
+            "Limited practical use"
+        ],
+        "complexity": "O(n²)",
+        "quantumResistant": false,
+        "compliance": [],
+        "realWorldUse": "Primarily of academic interest. Not used in major commercial protocols.",
+        "implementation": "Available in academic libraries (e.g., NTL, Charm)."
+    },
+    "Salsa20": {
+        "name": "Salsa20",
+        "type": "symmetric",
+        "dataTypes": [
+            "text",
+            "streaming",
+            "audio",
+            "video"
+        ],
+        "securityLevel": 8,
+        "performanceScore": 10,
+        "useCases": [
+            "streaming",
+            "mobile"
+        ],
+        "keyLengths": [
+            128,
+            256
+        ],
+        "blockSize": null,
+        "yearIntroduced": 2005,
+        "description": "Salsa20 is a fast stream cipher that was a finalist in the eSTREAM project. It serves as the basis for the (now more common) ChaCha20.",
+        "strengths": [
+            "Extremely fast",
+            "Simple implementation",
+            "No timing attacks",
+            "Good security"
+        ],
+        "weaknesses": [
+            "Less studied than ChaCha20",
+            "Not as widely adopted as ChaCha20"
+        ],
+        "complexity": "O(n) minimal overhead",
+        "quantumResistant": false,
+        "compliance": [
+            "eSTREAM"
+        ],
+        "realWorldUse": "Used in: The NaCl crypto library. Has been largely superseded by its successor, ChaCha20.",
+        "implementation": "Available in libsodium, NaCl, PyCryptodome (Python)."
+    }
+}
